@@ -38,33 +38,47 @@ class BinaryTree {
     }
   }
 
-  traverseInOrder() {
-    //left + right
-    const result = [];
-    if (!this.root) return [];
-    const traverse = (node) => {
-      if (node.left) traverse(node.left);
-      result.push(node.value);
-      if (node.right) traverse(node.right);
-    };
+  // left -> root -> right
+  traverseInOrder(node) {
+    if (!node) return [];
 
-    traverse(this.root);
-    return result;
+    const leftValues = this.traverseInOrder(node.left);
+    const rightValues = this.traverseInOrder(node.right);
+
+    return [...leftValues, node.value, ...rightValues];
+  }
+
+  // left -> right -> root
+  traversePostOrder(node) {
+    if (!node) return [];
+
+    const leftValues = this.traversePostOrder(node.left);
+    const rightValues = this.traversePostOrder(node.right);
+
+    return [...leftValues, ...rightValues, node.value];
+  }
+
+  // root -> left -> right
+  traversePreOrder(node) {
+    if (!node) return [];
+
+    const leftValues = this.traversePreOrder(node.left);
+    const rightValues = this.traversePreOrder(node.right);
+    return [node.value, ...leftValues, ...rightValues];
   }
 }
 
 const binaryTree = new BinaryTree();
+binaryTree.insert(5);
 binaryTree.insert(8);
-binaryTree.insert(6);
-binaryTree.insert(1);
 binaryTree.insert(3);
 binaryTree.insert(4);
+binaryTree.insert(6);
+binaryTree.insert(1);
+binaryTree.insert(9);
 binaryTree.insert(7);
-binaryTree.insert(13);
-binaryTree.insert(10);
-binaryTree.insert(14);
 
-console.log(binaryTree.traverseInOrder());
+console.log(binaryTree.traverseInOrder(binaryTree.root));
 
 // Tree structure
 //     a
