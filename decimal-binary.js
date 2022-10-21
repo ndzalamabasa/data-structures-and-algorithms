@@ -1,4 +1,4 @@
-function decToBin(decimalNumber, bin = "") {
+function decToBin(decimalNumber, bin = '') {
   if (decimalNumber === 0) {
     return bin;
   }
@@ -7,4 +7,4 @@ function decToBin(decimalNumber, bin = "") {
   return decToBin(Math.floor(decimalNumber / 2), bin);
 }
 
-console.log(decToBin(233));
+console.log(decToBin(5436584564556455));
