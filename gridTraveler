@@ -1,0 +1,7 @@
+You are a traveler on a 2D grid. you begin in the top left corner and your goal is to get to the bottom-right corner
+
+write a function gridTraveler(m,n) that calculate how many different ways you can travel
+
+gridTraveler(2,3) -->3
+gridTraveler(3,3) -->6
+gridTraveler(18,18) -->2333606220

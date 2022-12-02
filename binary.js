@@ -58,6 +58,7 @@ class BinaryTree {
     return [...leftValues, ...rightValues, node.value];
   }
 
+  // Depth first
   // root -> left -> right
   traversePreOrder(node) {
     if (!node) return [];
@@ -77,51 +78,3 @@ binaryTree.insert(6);
 binaryTree.insert(1);
 binaryTree.insert(9);
 binaryTree.insert(7);
-
-console.log(binaryTree.traverseInOrder(binaryTree.root));
-
-// Tree structure
-//     a
-//    / \
-//   b   c
-//  / \   \
-// d   e   f
-
-// Depth-first traversal: Pre-order
-// Expected output: [a, b, d, e, c, f]
-// function preOrder(root) {
-//   const result = [];
-//   if (root === null) {
-//     return result;
-//   }
-//   const stack = [root];
-//   while (stack.length > 0) {
-//     const node = stack.pop();
-//     result.push(node.value);
-//     if (node.right) {
-//       stack.push(node.right);
-//     }
-//     if (node.left) {
-//       stack.push(node.left);
-//     }
-//   }
-//   return result;
-// }
-
-// function preOrder(root) {
-//   if (root === null) return [];
-
-//   const leftValues = preOrder(root.left);
-//   const rightValues = preOrder(root.right);
-
-//   return [root.value, ...leftValues, ...rightValues];
-// }
-
-// console.log(preOrder(a));
-
-// In-order: d, b, e, a, c, f
-// Pre-order: a, b, d, e, c, f
-// Post-order: d, e, b, f, c, a
-
-// Breadth-first traversal
-// a, b, c, d, e, f

@@ -13,11 +13,6 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
-  // constructor() {
-  //   this.head = null;
-  //   this.tail = this.head;
-  //   this.length = 0;
-  // }
 
   // push
   push(value) {
@@ -38,17 +33,10 @@ class LinkedList {
   //unshift
   unshift(value) {
     const node = new Node(value);
-
-    if (!this.head) {
-      this.head = node;
-      this.tail = this.head;
-      this.length = 1;
-    } else {
-      this.head.prev = node;
-      node.next = this.head;
-      this.head = node;
-      this.length++;
-    }
+    this.head.prev = node;
+    node.next = this.head;
+    this.head = node;
+    this.length++;
   }
 
   //pop
@@ -87,7 +75,7 @@ class LinkedList {
 
   //insert(index,value)
   insert(index, value) {
-    if (index === 0) {
+    if (index === 1) {
       this.unshift(value);
     } else if (index === this.length) {
       this.push(value);
@@ -122,10 +110,10 @@ class LinkedList {
 }
 
 const firstList = new LinkedList(2);
-// firstList.push(3);
-// firstList.push(4);
-// firstList.push(5);
-// firstList.unshift(1);
-firstList.insert(0, 6);
+firstList.push(3);
+firstList.push(4);
+firstList.push(5);
+firstList.unshift(1);
+firstList.insert(2, 6);
 
 console.table(firstList);

@@ -1,12 +1,3 @@
-class Track {
-  /* constructor(name, projects, topics, groupProjects){
-    this.name = name;
-    this.projects = projects;
-    this.topics = topics;
-    this.groupProjects = groupProjects;
- } */
-}
-
 class Web {
   constructor() {
     this.name = "Web Dev";

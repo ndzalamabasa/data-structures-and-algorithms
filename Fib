@@ -1,0 +1,9 @@
+Write a function fib(n) that takes a number as an argument,
+the function should return the n-nth term of the fibonnaci sequence.
+
+the first and second number of the sequence is 1, 
+to generate the next number we sum the past two numbers 
+fib(n)= fib(n-1)+ fib(n-2)
+
+n=      1  2  3  4  5  6  7  8   9  .....50
+fib(n)= 1  1  2  3  5  8  13 21  34 .....12586269025
